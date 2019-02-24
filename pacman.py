@@ -635,7 +635,7 @@ def runGames( layout, pacman, ghosts, display, numGames, record, numTraining = 0
     for i in range( numGames ):
         beQuiet = i < numTraining
         if beQuiet:
-                # Suppress output and graphics
+            # Suppress output and graphics
             import textDisplay
             gameDisplay = textDisplay.NullGraphics()
             rules.quiet = True
@@ -645,7 +645,6 @@ def runGames( layout, pacman, ghosts, display, numGames, record, numTraining = 0
         game = rules.newGame( layout, pacman, ghosts, gameDisplay, beQuiet, catchExceptions)
         game.run()
         if not beQuiet: games.append(game)
-
         if record:
             import time, cPickle
             fname = ('recorded-game-%d' % (i + 1)) +  '-'.join([str(t) for t in time.localtime()[1:6]])

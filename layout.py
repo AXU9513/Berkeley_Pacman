@@ -115,7 +115,7 @@ class Layout:
 
     def processLayoutChar(self, x, y, layoutChar):
         if layoutChar == '%':
-            self.walls[x][y] = True
+            self.walls[x][y] = True # False to remove wall, but will cause "list index out of range"
         elif layoutChar == '.':
             self.food[x][y] = True
         elif layoutChar == 'o':
